@@ -10,7 +10,7 @@ class Config(object):
 	SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
     	'sqlite:///' + os.path.join(basedir, 'app.db')
 
-    # This configuratino option is to disable a feature in Flask-SQLAlchemy that
-    # is not needed which is to signal the applicatino every time a change is about
+    # This configuration option is to disable a feature in Flask-SQLAlchemy that
+    # is not needed which is to signal the application every time a change is about
     # to be made in the database
 	SQLALCHEMY_TRACK_MODIFICATIONS = False

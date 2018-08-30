@@ -1,8 +1,9 @@
-from flask import render_template, flash, redirect, url_for
+from flask import render_template, flash, redirect, url_for, request
 from app import app, db
-from app.forms import LoginForm, RegistrationForm
+from app.forms import LoginForm, RegistrationForm, EditProfileForm
 from app.models import User
 from flask_login import current_user, login_user, logout_user, login_required
+from datetime import datetime
 
 @app.route('/')
 @app.route('/index')
@@ -65,3 +66,40 @@ def user(username):
 		{'author': user, 'body': 'Test post #2'}
 	]
 	return render_template('user.html', user=user, posts=posts)
+
+# Routing page for editing the profile in an about_me field for each user. Users also
+# have the ability to change their username in this page. This works in conjunction 
+# with the edit_profile.html template and form
+@app.route('/edit_profile', methods=['GET', 'POST'])
+@login_required
+def edit_profile():
+	form = EditProfileForm()
+
+	# validate_on_submit() returns true, copy the data from the form into the user
+	# object and write the object to the database
+	if form.validate_on_submit():
+		current_user.username = form.username.data
+		current_user.about_me = form.about_me.data
+		db.session.commit()
+		flash('Your changes have been saved.')
+		return redirect(url_for('edit_profile'))
+
+	# If the page/form is being requested with GET, this will populate the form with 
+	# any pre-existing text in the fields found in the database
+	elif request.method == 'GET':
+		form.username.data = current_user.username
+		form.about_me.data = current_user.about_me
+
+	# If the above two criteria does not fit this implies browser sent a POST request
+	# with form data but something in the data is invalid
+	return render_template('edit_profile.html', title='Edit Profile', form=form)
+
+# Before Request decorator from Flask registers the decorated function to be exceuted
+# right before the view function. This is useful for executing any code before the
+# view function
+@app.before_request
+def before_request():
+	# Update the last_seen time of a logged in user in the database
+	if current_user.is_authenticated:
+		current_user.last_seen = datetime.utcnow()
+		db.session.commit()

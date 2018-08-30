@@ -5,12 +5,27 @@ from app import db
 from app import login
 from hashlib import md5
 
+# The model page defines the structure of the Model within the MVC framework
+# These items define how the structure is formed within the Database
+#
+# To create the flask migration script run the following command:
+# flask db migrate -m "new fields in the user model"
+#
+# To use the newly created flask migration script run the following command:
+# flask db upgrade
+#
+# To backtrack on a previous change performed by a flask migration script run the
+# following command:
+# flask db downgrade
+
 class User(UserMixin, db.Model):
 	id = db.Column(db.Integer, primary_key=True)
 	username = db.Column(db.String(64), index=True, unique=True)
 	email = db.Column(db.String(120), index=True, unique=True)
 	password_hash = db.Column(db.String(128))
 	posts = db.relationship('Post', backref='author', lazy='dynamic')
+	about_me = db.Column(db.String(140))
+	last_seen = db.Column(db.DateTime, default=datetime.utcnow)
 
 	def __repr__(self):
 		return '<User {}>'.format(self.username)
