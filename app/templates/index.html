@@ -15,9 +15,18 @@
 		<p>{{ form.submit() }}</p>
 	</form>
 	{% endif %}
-	{% for post in posts %}
-		{% include '_post.html' %}
-	{% endfor %}
+
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th class="col-sm-1"></th>
+				<th class="col-sm-3"></th>
+			</tr>
+		</thead>
+		{% for post in posts %}
+			{% include '_post.html' %}
+		{% endfor %}
+	</table>
 	{% if prev_url %}
 	<a href="{{ prev_url }}">Newer posts</a>
 	{% endif %}

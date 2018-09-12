@@ -1,82 +1,22 @@
-2018-09-11 14:26:01,747 ERROR: Exception on /index [GET] [in C:\Continuum\anaconda3\lib\site-packages\flask\app.py:1560]
-Traceback (most recent call last):
-  File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 1982, in wsgi_app
-    response = self.full_dispatch_request()
-  File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "C:\Continuum\anaconda3\lib\site-packages\flask\_compat.py", line 33, in reraise
-    raise value
-  File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 1598, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\routes.py", line 30, in index
-    posts = current_user.followed_posts().all()
-  File "C:\Continuum\anaconda3\lib\site-packages\werkzeug\local.py", line 347, in __getattr__
-    return getattr(self._get_current_object(), name)
-AttributeError: 'AnonymousUserMixin' object has no attribute 'followed_posts'
-2018-09-11 14:36:29,548 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
-2018-09-11 14:37:13,791 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
-2018-09-12 02:32:30,680 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
-2018-09-12 02:32:33,489 ERROR: Exception on /index [GET] [in C:\Continuum\anaconda3\lib\site-packages\flask\app.py:1560]
-Traceback (most recent call last):
-  File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 1982, in wsgi_app
-    response = self.full_dispatch_request()
-  File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "C:\Continuum\anaconda3\lib\site-packages\flask\_compat.py", line 33, in reraise
-    raise value
-  File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 1598, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Continuum\anaconda3\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\routes.py", line 40, in index
-    if posts.has_perv else None
-AttributeError: 'Pagination' object has no attribute 'has_perv'
-2018-09-12 02:32:59,449 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
-2018-09-12 02:35:15,625 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
-2018-09-12 03:17:18,131 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
-2018-09-12 03:17:57,986 ERROR: Exception on /user/jochik [GET] [in C:\Continuum\anaconda3\lib\site-packages\flask\app.py:1560]
-Traceback (most recent call last):
-  File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 1982, in wsgi_app
-    response = self.full_dispatch_request()
-  File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "C:\Continuum\anaconda3\lib\site-packages\flask\_compat.py", line 33, in reraise
-    raise value
-  File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 1598, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Continuum\anaconda3\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\routes.py", line 97, in user
-    posts = user.posts().order_by(Post.timestamp.desc()).paginate(
-TypeError: 'AppenderBaseQuery' object is not callable
-2018-09-12 03:18:57,448 ERROR: Exception on /user/jochik [GET] [in C:\Continuum\anaconda3\lib\site-packages\flask\app.py:1560]
-Traceback (most recent call last):
-  File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 1982, in wsgi_app
-    response = self.full_dispatch_request()
-  File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "C:\Continuum\anaconda3\lib\site-packages\flask\_compat.py", line 33, in reraise
-    raise value
-  File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 1598, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Continuum\anaconda3\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\routes.py", line 97, in user
-    posts = user.posts.order_by(Post.timestamp.desc()).paginate(
-TypeError: 'AppenderBaseQuery' object is not callable
+2018-09-12 12:48:42,338 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
+2018-09-12 12:56:16,291 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
+2018-09-12 12:57:28,403 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
+2018-09-12 12:59:05,821 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
+2018-09-12 13:16:04,953 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
+2018-09-12 13:19:29,790 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
+2018-09-12 13:21:05,129 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
+2018-09-12 13:22:10,917 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
+2018-09-12 13:25:57,920 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
+2018-09-12 13:26:53,075 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
+2018-09-12 13:27:24,180 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
+2018-09-12 13:28:49,570 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
+2018-09-12 13:31:49,482 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
+2018-09-12 13:35:29,748 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
+2018-09-12 13:39:09,180 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
+2018-09-12 13:40:11,239 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
+2018-09-12 13:40:50,584 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
+2018-09-12 13:41:35,928 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
+2018-09-12 13:43:40,158 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
+2018-09-12 13:44:11,351 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
+2018-09-12 13:44:49,835 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
+2018-09-12 13:45:36,024 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]

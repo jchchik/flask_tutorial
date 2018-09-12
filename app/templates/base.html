@@ -1,33 +1,80 @@
-<html>
-	<head>
-		{% if title %}
-		<title>{{ title }} - microblog</title>
-		{% else %}
-		<title>microblog</title>
-		{% endif %}
-	</head>
-	<body>
-		<div>
-			Microblog:
-			<a href="{{ url_for('index') }}">Home</a>
-			<a href="{{ url_for('explore') }}">Explore</a>
-			{% if current_user.is_anonymous %}
-			<a href="{{ url_for('login') }}">Login</a>
-			{% else %}
-			<a href="{{ url_for('user', username=current_user.username) }}">Profile</a>
-			<a href="{{ url_for('logout') }}">Logout</a>
-			{% endif %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<meta name="description" content="Harvest">
+	<meta name="author" content="Jonathan Chik">
+	<!-- No Icon Yet
+	<link rel="icon" href="../../favicon.ico"> -->
+
+	<title>Harvest</title>
+
+	<!-- Bootstrap core CSS -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+		integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" 
+		crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
+		integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" 
+		crossorigin="anonymous"></script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<!-- Custom styles for this template -->
+	<link href="{{ url_for('static',filename='css/navbar-fixed-top.css') }}" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+	<!-- Fixed navbar -->
+	<nav class="navbar navbar-default navbar-fixed-top">
+	  <div class="container">
+		<div class="navbar-header">
+		  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		  </button>
+		  <a class="navbar-brand" href="#">Harvest</a>
 		</div>
-		<hr>
-		{% with messages = get_flashed_messages() %}
-		{% if messages %}
+		<div id="navbar" class="navbar-collapse collapse">
+		  <ul class="nav navbar-nav">
+			<li><a href="{{ url_for('index') }}">Home</a></li>
+			<li><a href="{{ url_for('explore') }}">Explore</a></li>
+		  </ul>
+		  <ul class="nav navbar-nav navbar-right">
+			{% if current_user.is_anonymous %}
+			<li><a href="{{ url_for('login') }}">Login</a></li>
+			{% else %}
+			<li><a href="{{ url_for('user', username=current_user.username) }}">Profile</a></li>
+			<li><a href="{{ url_for('logout') }}">Logout</a></li>
+			{% endif %}
+		  </ul>
+		</div>
+	  </div>
+	</nav>
+	
+	<!-- flashed messages -->
+	{% with messages = get_flashed_messages() %}
+	{% if messages %}
 		<ul>
 			{% for message in messages %}
-			<li>{{ message }}</li>
+			<div class="alert alert-success" role="alert">
+        		{{ message }}
+      		</div>
 			{% endfor %}
 		</ul>
-		{% endif %}
-		{% endwith %}
-		{% block content %}{% endblock %}
-	</body>
+	{% endif %}
+	{% endwith %}
+
+	<div class="container">
+		{% block content %}
+		{% endblock %}
+	</div> <!-- /container -->
+
+  </body>
 </html>
