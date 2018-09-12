@@ -19,3 +19,64 @@ Traceback (most recent call last):
 AttributeError: 'AnonymousUserMixin' object has no attribute 'followed_posts'
 2018-09-11 14:36:29,548 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
 2018-09-11 14:37:13,791 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
+2018-09-12 02:32:30,680 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
+2018-09-12 02:32:33,489 ERROR: Exception on /index [GET] [in C:\Continuum\anaconda3\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Continuum\anaconda3\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Continuum\anaconda3\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\routes.py", line 40, in index
+    if posts.has_perv else None
+AttributeError: 'Pagination' object has no attribute 'has_perv'
+2018-09-12 02:32:59,449 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
+2018-09-12 02:35:15,625 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
+2018-09-12 03:17:18,131 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
+2018-09-12 03:17:57,986 ERROR: Exception on /user/jochik [GET] [in C:\Continuum\anaconda3\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Continuum\anaconda3\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Continuum\anaconda3\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\routes.py", line 97, in user
+    posts = user.posts().order_by(Post.timestamp.desc()).paginate(
+TypeError: 'AppenderBaseQuery' object is not callable
+2018-09-12 03:18:57,448 ERROR: Exception on /user/jochik [GET] [in C:\Continuum\anaconda3\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Continuum\anaconda3\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Continuum\anaconda3\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\routes.py", line 97, in user
+    posts = user.posts.order_by(Post.timestamp.desc()).paginate(
+TypeError: 'AppenderBaseQuery' object is not callable
