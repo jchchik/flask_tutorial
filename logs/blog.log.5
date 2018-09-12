@@ -1,13 +1,4 @@
-2018-09-05 10:08:16,119 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
-2018-09-05 13:11:33,840 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
-2018-09-05 13:12:00,853 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
-2018-09-05 13:12:14,889 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
-2018-09-11 03:21:51,903 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
-2018-09-11 03:22:23,267 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
-2018-09-11 03:22:59,423 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
-2018-09-11 11:20:20,584 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
-2018-09-11 12:33:30,491 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
-2018-09-11 12:34:46,917 ERROR: Exception on /follow/jochik [GET] [in C:\Continuum\anaconda3\lib\site-packages\flask\app.py:1560]
+2018-09-11 13:29:11,332 ERROR: Exception on /user/jchchik [GET] [in C:\Continuum\anaconda3\lib\site-packages\flask\app.py:1560]
 Traceback (most recent call last):
   File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 1982, in wsgi_app
     response = self.full_dispatch_request()
@@ -23,17 +14,28 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "C:\Continuum\anaconda3\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\routes.py", line 103, in follow
-    if user is none:
-NameError: name 'none' is not defined
-2018-09-11 12:38:21,217 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
-2018-09-11 12:38:43,403 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
-2018-09-11 12:42:50,900 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
-2018-09-11 13:20:09,541 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
-2018-09-11 13:20:37,396 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
-2018-09-11 13:22:22,528 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
-2018-09-11 13:22:58,108 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
-2018-09-11 13:23:03,591 ERROR: Exception on /index [GET] [in C:\Continuum\anaconda3\lib\site-packages\flask\app.py:1560]
+  File "C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\routes.py", line 75, in user
+    return render_template('user.html', user=user, posts=posts)
+  File "C:\Continuum\anaconda3\lib\site-packages\flask\templating.py", line 134, in render_template
+    context, ctx.app)
+  File "C:\Continuum\anaconda3\lib\site-packages\flask\templating.py", line 116, in _render
+    rv = template.render(context)
+  File "C:\Continuum\anaconda3\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "C:\Continuum\anaconda3\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Continuum\anaconda3\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Continuum\anaconda3\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\templates\user.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\templates\base.html", line 30, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\templates\user.html", line 23, in block "content"
+    {% for post in posts %}
+TypeError: 'NoneType' object is not iterable
+2018-09-11 13:30:13,276 ERROR: Exception on /user/jchchik [GET] [in C:\Continuum\anaconda3\lib\site-packages\flask\app.py:1560]
 Traceback (most recent call last):
   File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 1982, in wsgi_app
     response = self.full_dispatch_request()
@@ -47,8 +49,10 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 1598, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\routes.py", line 31, in index
-    return render_template('index.html', title='Home Page', form=form, posts=posts)
+  File "C:\Continuum\anaconda3\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\routes.py", line 75, in user
+    return render_template('user.html', user=user, posts=posts)
   File "C:\Continuum\anaconda3\lib\site-packages\flask\templating.py", line 134, in render_template
     context, ctx.app)
   File "C:\Continuum\anaconda3\lib\site-packages\flask\templating.py", line 116, in _render
@@ -61,16 +65,17 @@ Traceback (most recent call last):
     reraise(exc_type, exc_value, tb)
   File "C:\Continuum\anaconda3\lib\site-packages\jinja2\_compat.py", line 37, in reraise
     raise value.with_traceback(tb)
-  File "C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\templates\index.html", line 1, in top-level template code
+  File "C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\templates\user.html", line 1, in top-level template code
     {% extends "base.html" %}
   File "C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\templates\base.html", line 30, in top-level template code
     {% block content %}{% endblock %}
-  File "C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\templates\index.html", line 4, in block "content"
-    <h1>Hi, {{ user.username }}!</h1>
-  File "C:\Continuum\anaconda3\lib\site-packages\jinja2\environment.py", line 430, in getattr
-    return getattr(obj, attribute)
-jinja2.exceptions.UndefinedError: 'user' is undefined
-2018-09-11 13:23:05,268 ERROR: Exception on /index [GET] [in C:\Continuum\anaconda3\lib\site-packages\flask\app.py:1560]
+  File "C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\templates\user.html", line 23, in block "content"
+    {% for post in posts %}
+TypeError: 'NoneType' object is not iterable
+2018-09-11 13:31:31,581 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
+2018-09-11 14:12:05,496 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
+2018-09-11 14:12:30,260 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
+2018-09-11 14:12:41,821 ERROR: Exception on /index [GET] [in C:\Continuum\anaconda3\lib\site-packages\flask\app.py:1560]
 Traceback (most recent call last):
   File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 1982, in wsgi_app
     response = self.full_dispatch_request()
@@ -84,28 +89,47 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 1598, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\routes.py", line 31, in index
-    return render_template('index.html', title='Home Page', form=form, posts=posts)
-  File "C:\Continuum\anaconda3\lib\site-packages\flask\templating.py", line 134, in render_template
-    context, ctx.app)
-  File "C:\Continuum\anaconda3\lib\site-packages\flask\templating.py", line 116, in _render
-    rv = template.render(context)
-  File "C:\Continuum\anaconda3\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
-    return original_render(self, *args, **kwargs)
-  File "C:\Continuum\anaconda3\lib\site-packages\jinja2\environment.py", line 1008, in render
-    return self.environment.handle_exception(exc_info, True)
-  File "C:\Continuum\anaconda3\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+  File "C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\routes.py", line 30, in index
+    posts = current_user.followed_posts().all()
+  File "C:\Continuum\anaconda3\lib\site-packages\werkzeug\local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+AttributeError: 'AnonymousUserMixin' object has no attribute 'followed_posts'
+2018-09-11 14:24:43,634 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
+2018-09-11 14:25:01,151 ERROR: Exception on /index [GET] [in C:\Continuum\anaconda3\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
     reraise(exc_type, exc_value, tb)
-  File "C:\Continuum\anaconda3\lib\site-packages\jinja2\_compat.py", line 37, in reraise
-    raise value.with_traceback(tb)
-  File "C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\templates\index.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\templates\base.html", line 30, in top-level template code
-    {% block content %}{% endblock %}
-  File "C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\templates\index.html", line 4, in block "content"
-    <h1>Hi, {{ user.username }}!</h1>
-  File "C:\Continuum\anaconda3\lib\site-packages\jinja2\environment.py", line 430, in getattr
-    return getattr(obj, attribute)
-jinja2.exceptions.UndefinedError: 'user' is undefined
-2018-09-11 13:25:23,858 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
-2018-09-11 13:29:08,059 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
+  File "C:\Continuum\anaconda3\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\routes.py", line 30, in index
+    posts = current_user.followed_posts().all()
+  File "C:\Continuum\anaconda3\lib\site-packages\werkzeug\local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+AttributeError: 'AnonymousUserMixin' object has no attribute 'followed_posts'
+2018-09-11 14:25:42,421 ERROR: Exception on /index [GET] [in C:\Continuum\anaconda3\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Continuum\anaconda3\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\routes.py", line 30, in index
+    posts = current_user.followed_posts().all()
+  File "C:\Continuum\anaconda3\lib\site-packages\werkzeug\local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+AttributeError: 'AnonymousUserMixin' object has no attribute 'followed_posts'

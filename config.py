@@ -30,4 +30,4 @@ class Config(object):
 	ADMINS = ['jonathanchik@gmail.com']
 
 	# Determine the number of posts produced for each page in pagination
-	POSTS_PER_PAGE = 25
+	POSTS_PER_PAGE = 15

@@ -3,6 +3,7 @@ from config import Config
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_login import LoginManager
+from flask_bootstrap import Bootstrap
 import logging, os
 from logging.handlers import SMTPHandler, RotatingFileHandler
 
@@ -14,6 +15,8 @@ db = SQLAlchemy(app)
 # Represents the migration engine
 migrate = Migrate(app, db)
 login = LoginManager(app)
+# Bootstrap Import (Flask)
+bootstrap = Bootstrap(app)
 
 # Run email/file logger when application is running without debug mode
 if not app.debug:
