@@ -1,4 +1,4 @@
-2018-09-13 13:04:31,095 ERROR: Exception on /favicon.ico [GET] [in C:\Continuum\anaconda3\lib\site-packages\flask\app.py:1761]
+2018-09-12 12:05:40,657 ERROR: Exception on /dist/js/bootstrap.min.js [GET] [in C:\Continuum\anaconda3\lib\site-packages\flask\app.py:1761]
 Traceback (most recent call last):
   File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
     rv = self.dispatch_request()
@@ -26,7 +26,7 @@ Traceback (most recent call last):
   File "C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\errors.py", line 9, in not_found_error
     return render_templaet('404.html'), 404
 NameError: name 'render_templaet' is not defined
-2018-09-13 13:04:34,808 ERROR: Exception on /favicon.ico [GET] [in C:\Continuum\anaconda3\lib\site-packages\flask\app.py:1761]
+2018-09-12 12:05:41,114 ERROR: Exception on /navbar-fixed-top.css [GET] [in C:\Continuum\anaconda3\lib\site-packages\flask\app.py:1761]
 Traceback (most recent call last):
   File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
     rv = self.dispatch_request()
@@ -54,7 +54,7 @@ Traceback (most recent call last):
   File "C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\errors.py", line 9, in not_found_error
     return render_templaet('404.html'), 404
 NameError: name 'render_templaet' is not defined
-2018-09-13 13:04:35,854 ERROR: Exception on /favicon.ico [GET] [in C:\Continuum\anaconda3\lib\site-packages\flask\app.py:1761]
+2018-09-12 12:05:41,326 ERROR: Exception on /dist/js/bootstrap.min.js [GET] [in C:\Continuum\anaconda3\lib\site-packages\flask\app.py:1761]
 Traceback (most recent call last):
   File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
     rv = self.dispatch_request()
@@ -82,7 +82,8 @@ Traceback (most recent call last):
   File "C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\errors.py", line 9, in not_found_error
     return render_templaet('404.html'), 404
 NameError: name 'render_templaet' is not defined
-2018-09-13 13:04:40,478 ERROR: Exception on /favicon.ico [GET] [in C:\Continuum\anaconda3\lib\site-packages\flask\app.py:1761]
+2018-09-12 12:08:52,501 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
+2018-09-12 12:08:54,780 ERROR: Exception on /navbar-fixed-top.css [GET] [in C:\Continuum\anaconda3\lib\site-packages\flask\app.py:1761]
 Traceback (most recent call last):
   File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
     rv = self.dispatch_request()
@@ -110,4 +111,37 @@ Traceback (most recent call last):
   File "C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\errors.py", line 9, in not_found_error
     return render_templaet('404.html'), 404
 NameError: name 'render_templaet' is not defined
-2018-09-13 13:05:23,176 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:52]
+2018-09-12 12:08:54,876 ERROR: Exception on /dist/js/bootstrap.min.js [GET] [in C:\Continuum\anaconda3\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 1791, in dispatch_request
+    self.raise_routing_exception(req)
+  File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 1774, in raise_routing_exception
+    raise request.routing_exception
+  File "C:\Continuum\anaconda3\lib\site-packages\flask\ctx.py", line 336, in match_request
+    self.url_adapter.match(return_rule=True)
+  File "C:\Continuum\anaconda3\lib\site-packages\werkzeug\routing.py", line 1581, in match
+    raise NotFound()
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server.  If you entered the URL manually please check your spelling and try again.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 1713, in handle_user_exception
+    return self.handle_http_exception(e)
+  File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 1644, in handle_http_exception
+    return handler(e)
+  File "C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\errors.py", line 9, in not_found_error
+    return render_templaet('404.html'), 404
+NameError: name 'render_templaet' is not defined
+2018-09-12 12:18:40,604 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
+2018-09-12 12:26:09,672 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
+2018-09-12 12:29:33,005 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
+2018-09-12 12:31:55,163 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
+2018-09-12 12:33:07,956 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
+2018-09-12 12:47:35,168 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]

@@ -6,7 +6,7 @@ from app import app, db
 # the error code number. 404 for page not found
 @app.errorhandler(404)
 def not_found_error(error):
-	return render_templaet('404.html'), 404
+	return render_template('404.html'), 404
 
 # Error handler functions which work similar to the view functions in the
 # routes.py file. These return a second value after the template which is

@@ -5,10 +5,13 @@ from app.models import User, Post
 from flask_login import current_user, login_user, logout_user, login_required
 from datetime import datetime
 
+# Routing for the main page of the application 
+# If user is not authenticated, this will push the user to the login page
 @app.route('/', methods=['GET', 'POST'])
 @app.route('/index', methods=['GET', 'POST'])
-@login_required
 def index():
+	if not current_user.is_authenticated:
+		return redirect(url_for('login'))
 	form = PostForm()
 	if form.validate_on_submit():
 		post = Post(body=form.post.data, author=current_user)

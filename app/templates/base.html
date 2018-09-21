@@ -7,10 +7,9 @@
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 	<meta name="description" content="Harvest">
 	<meta name="author" content="Jonathan Chik">
-	<!-- No Icon Yet
-	<link rel="icon" href="../../favicon.ico"> -->
+	<link rel="icon" href="{{ url_for('static',filename='image/favicon.ico') }}">
 
-	<title>Harvest</title>
+	<title>New Harvest Capital</title>
 
 	<!-- Bootstrap core CSS -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -39,7 +38,7 @@
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 		  </button>
-		  <a class="navbar-brand" href="#">Harvest</a>
+		  <a class="navbar-brand" href="#">New Harvest Capital</a>
 		</div>
 		<div id="navbar" class="navbar-collapse collapse">
 		  <ul class="nav navbar-nav">
@@ -50,6 +49,7 @@
 			{% if current_user.is_anonymous %}
 			<li><a href="{{ url_for('login') }}">Login</a></li>
 			{% else %}
+			<li><a>Investments</a></li>
 			<li><a href="{{ url_for('user', username=current_user.username) }}">Profile</a></li>
 			<li><a href="{{ url_for('logout') }}">Logout</a></li>
 			{% endif %}

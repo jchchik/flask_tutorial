@@ -1,0 +1,103 @@
+2018-09-12 12:48:42,338 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
+2018-09-12 12:56:16,291 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
+2018-09-12 12:57:28,403 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
+2018-09-12 12:59:05,821 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
+2018-09-12 13:16:04,953 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
+2018-09-12 13:19:29,790 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
+2018-09-12 13:21:05,129 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
+2018-09-12 13:22:10,917 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
+2018-09-12 13:25:57,920 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
+2018-09-12 13:26:53,075 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
+2018-09-12 13:27:24,180 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
+2018-09-12 13:28:49,570 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
+2018-09-12 13:31:49,482 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
+2018-09-12 13:35:29,748 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
+2018-09-12 13:39:09,180 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
+2018-09-12 13:40:11,239 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
+2018-09-12 13:40:50,584 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
+2018-09-12 13:41:35,928 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
+2018-09-12 13:43:40,158 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
+2018-09-12 13:44:11,351 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
+2018-09-12 13:44:49,835 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
+2018-09-12 13:45:36,024 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:49]
+2018-09-12 14:20:46,727 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:52]
+2018-09-12 14:23:57,461 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:52]
+2018-09-12 14:34:07,963 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:52]
+2018-09-12 14:34:11,320 ERROR: Exception on /index [GET] [in C:\Continuum\anaconda3\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Continuum\anaconda3\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Continuum\anaconda3\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\routes.py", line 42, in index
+    posts=posts.items, next_url=next_url, prev_url=prev_url)
+  File "C:\Continuum\anaconda3\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "C:\Continuum\anaconda3\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "C:\Continuum\anaconda3\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Continuum\anaconda3\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Continuum\anaconda3\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\templates\index.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\templates\base.html", line 75, in top-level template code
+    {% block content %}
+  File "C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\templates\index.html", line 8, in block "content"
+    {{ wtf.quick_form(form) }}
+  File "C:\Continuum\anaconda3\lib\site-packages\jinja2\environment.py", line 430, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'wtf' is undefined
+2018-09-12 14:34:33,125 ERROR: Exception on /index [GET] [in C:\Continuum\anaconda3\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Continuum\anaconda3\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Continuum\anaconda3\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Continuum\anaconda3\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\routes.py", line 42, in index
+    posts=posts.items, next_url=next_url, prev_url=prev_url)
+  File "C:\Continuum\anaconda3\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "C:\Continuum\anaconda3\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "C:\Continuum\anaconda3\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Continuum\anaconda3\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Continuum\anaconda3\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\templates\index.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\templates\base.html", line 75, in top-level template code
+    {% block content %}
+  File "C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\templates\index.html", line 8, in block "content"
+    <div class="col-md-4">
+  File "C:\Continuum\anaconda3\lib\site-packages\jinja2\environment.py", line 430, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'wtf' is undefined
+2018-09-12 14:35:44,849 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:52]
+2018-09-12 14:36:38,973 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:52]
+2018-09-12 14:41:41,863 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:52]
+2018-09-12 14:45:51,560 INFO: Microblog startup [in C:\Users\chikjo\Documents\Python_Projects\flask_tutorial\app\__init__.py:52]

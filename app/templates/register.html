@@ -4,13 +4,30 @@
 {% block content %}
 
 	<h1>Register</h1>
+	<form action="" method="post">
+		{{ form.csrf_token() }}
+		{{ form.hidden_tag() }}
+		<d1>
+			<div style='width: 50%'>
+			{{ wtf.form_field(form.username, class='form-control', placeholder='Example: jryan', size=20) }}
+			{{ wtf.form_field(form.email, class='form-control', placeholder='Example: jryan@gmail.com') }}
+			{{ wtf.form_field(form.password, class='form-control', placeholder='We do not share your password') }}
+			{{ wtf.form_field(form.password2, class='form-control', placeholder='Retype your password') }}
+			</div>
+		</d1>
+		<p><input type=submit class='btn btn-primary'></p>
+	</form>
+
+	<!-- Using quick macros
+	<h1>Register</h1>
 	<div class="row">
 		<div class="col-md-4">
 			{{ wtf.quick_form(form) }}
 		</div>
 	</div>
+	-->
 
-<!-- Test
+	<!-- Normal WTF Form template without flask-boostrap macro
 	<h1>Register</h1>
 	<form action="" method="post">
 		{{ form.hidden_tag() }}
@@ -44,7 +61,24 @@
 		</p>
 		<p>{{ form.submit() }}</p>
 	</form>
--->
+	-->
+
+	<!-- Bootstrap code for forms
+	<div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  	</div>
+  	<div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  	</div>
+  	<div class="form-group form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  	</div>
+  	<button type="submit" class="btn btn-primary">Submit</button>
+  	-->
 
 {% endblock %}
 
